@@ -25,7 +25,6 @@ const config: DocsThemeConfig = {
   head: (
     <head>
       <title>Git Training</title>
-      <link rel="icon" type="image/x-icon" href="/images/favicon.ico"></link>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="author" content="" />
       <meta
@@ -41,10 +40,7 @@ const config: DocsThemeConfig = {
         property="og:description"
         content="A Git Training by Akamai Advanced Solutions Team"
       />
-      {/* <meta
-        property="og:image"
-        content=""
-      /> */}
+      <link rel="icon" href="/favicon.ico"></link>
     </head>
   ),
   project: {
