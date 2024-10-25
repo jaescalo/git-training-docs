@@ -1,11 +1,85 @@
 # Introduction
  
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+Welcome to the Intro to Git and GitHub.  We are going to be teaching you the basics of how code can be stored and worked on using modern tools like Git and Github.
 
-## What is Nextra?
+## A look at the not-so-good old days
+Back in the day imagine that you want to build a website.  You might have:
+- Fired up Dreamweaver or BBEdit and started writing HTML. 
+- Test it locally and make sure things look right.
+- Upload it to an S/FTP location to make it "Live"
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+This model is still used for quick and dirty changes/prototyping in lots of non-html contexts. Need to set up kubenetes a certain way? You might make some changes and quickly deploy with `kubectl`.  
+If it ain't broke don't fix it.  Why do we need more than this?  So we all look back on history fondly.  Then we remember what actually happened. 
+- Maybe we made a change to a webpage and deployed it and then realized that we made a mistake but no longer had a copy of the original.  
+- Maybe we are working with a colleague and you both were working on the same page at the same time without realizing it and you both deployed your changes.  The last person to deploy "wins". 
+- Compounding the problem maybe having the original would help with merging the changes together.  
+- If we want to see the history of changes to understand how a page works or how its evolved we can't.
+- If someone defaces the page we have a really hard time to understand who and how it happned.
+- If we are working with code that is more sophisticated than HTML we may not be deploying it in a reproducible way so maybe each deployment has different results depending on what versions of the configuration are deployed in what order.  
 
-## Documentation
+## What is a Version Control System (VCS)?
+A Version Control System (VCS) is a tool that helps manage changes to source code over time. It keeps track of every modification to the code in a special kind of database. Its no different than how google docs tracks revisions.
+In a VCS system a developer can do work on a series of files and group that work as a revision.  Typically in VCS we call that a `commit`.
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+If a mistake is made, developers can turn back the clock and compare earlier versions of the code to help fix the mistake while minimizing disruption to all team members.  If they are tying to understand how or why something was done they can look at all the revisions to a specific file.  They can even get clues by reading the commit messages on the revisions!
+
+## Why is VCS Relevant?
+
+- **Collaboration**: Multiple developers can work on the same project simultaneously without overwriting each other's work.
+- **History**: Every change is recorded, allowing developers to revert to previous versions if necessary.
+- **Backup**: The codebase is stored in a repository, providing a backup in case of data loss.
+- **Branching and Merging**: Developers can create branches to work on new features independently and merge them back into the main codebase once they are complete.
+
+## What does VCS have to do with terraform? 
+This is a class about terraform.  Why are we wasting our time on Git? 
+
+So say instead of HTML you want to deploy config changes to a cluster.  You can do it by hand.  You try something make a change. It doesn't work. You make another change.  The changes stack up and you have no idea where you started or the path to get you to the current state. Want to reproduce it on a fresh system?  Good luck!
+Instead of hammering at it by hand with terraform we can describe what the desired state of the changes are.  We can then commit that into VCS so that we can track it, make changes and ultimately update it. Need to setup the same thing in a different region?  No problem! 
+
+VCS is the tooling that supports IaC model (Infrastructure a code)
+
+
+## What is Git
+Git is a distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It allows multiple developers to work on a project simultaneously without interfering with each other.
+
+### Key Features of Git
+
+- **Distributed**: Every developer has a full copy of the repository, including the entire history of changes.
+- **Performance**: Git is designed to be fast, even for large projects.
+- **Branching and Merging**: Git makes it easy to create branches for new features and merge them back into the main codebase.
+
+## How is Git Related to GitHub?
+
+GitHub is a web-based platform that uses Git for version control. It provides a collaborative environment for developers to work on projects together. GitHub adds several features on top of Git, including:
+
+- **Repositories**: Centralized locations where the codebase is stored.
+- **Pull Requests**: A way to propose changes to the codebase and discuss them with other developers.
+- **Issues**: A system for tracking bugs and feature requests.
+- **Actions**: Automated workflows for building, testing, and deploying code.
+
+### Using Git and GitHub Together
+
+1. **Create a Repository**: Start by creating a repository on GitHub.
+2. **Clone the Repository**: Use Git to clone the repository to your local machine.
+3. **Make Changes**: Edit the code on your local machine.
+4. **Commit Changes**: Use Git to commit your changes to the local repository.
+5. **Push Changes**: Push your changes to the GitHub repository.
+6. **Collaborate**: Use pull requests and issues to collaborate with other developers.
+
+## What is Git Not Good For?
+
+While Git is a powerful and versatile version control system, it has some limitations and scenarios where it may not be the best choice:
+
+### Large Binary Files
+
+- **Inefficient Storage**: Git is optimized for text files and source code. It does not handle large binary files efficiently, as it stores the entire file for each version, leading to large repository sizes.
+- **Performance Issues**: Working with large binary files can slow down Git operations like cloning, fetching, and pushing.
+- **Merge Conflicts**: Git's merge capabilities are optimized for text files. Binary files and other non-mergeable files can lead to frequent and difficult-to-resolve merge conflicts.
+- **Limited Diffing**: Git's diffing and merging tools are less effective with binary files, making it harder to understand changes and resolve conflicts.
+
+### Monorepo Repositories
+- **Complexity**: Managing very large cross team repositories `monorepos` with many unrelated projects can become complex and unwieldy.
+- **Performance**: Operations like cloning and checking out branches can become slow in very large repositories.
+
+## Conclusion 
+Git is a great tool for teams and even individuals to track their code over time and maintain it for reproducible results.

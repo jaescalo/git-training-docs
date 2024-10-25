@@ -1,10 +1,22 @@
 {
   "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
-  "about": {
-    "title": "About",
-    "type": "page"
+  "history": {
+    "title": "History of VCS"
+  },
+  "setup": {
+    "title": "Getting Set Up for Git"
+  },
+  "basic-terms": {
+    "title": "Basic Git Terms and Concepts"
+  },
+  "hands-on": {
+    "title": "Hands on with Git"
+  },
+  "common-git-commands": {
+    "title": "Common Git Commands"
+  },
+  "best-practices": {
+    "title": "Best Practices"
   },
   "contact": {
     "title": "Contact ↗",

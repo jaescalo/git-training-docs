@@ -1,0 +1,156 @@
+
+# Commonly Used Git Commands
+
+## Introduction
+
+Git is a powerful version control system that helps developers manage changes to their codebase. Here are some of the most commonly used Git commands that you should know.
+
+## git init
+
+Initializes a new Git repository in the current directory.
+
+```sh
+git init
+```
+
+## git clone
+
+Clones an existing repository into a new directory.
+
+```sh
+git clone <repository-url>
+```
+
+## git status
+
+Displays the state of the working directory and the staging area. It shows which changes have been staged, which haven't, and which files aren't being tracked by Git.
+
+```sh
+git status
+```
+
+## git add
+
+Adds changes in the working directory to the staging area. You can add specific files or use \`.\` to add all changes.
+
+```sh
+git add <file>
+git add .
+```
+
+## git commit
+
+Records changes to the repository. Use the \`-m\` option to include a commit message.
+
+```sh
+git commit -m "Commit message"
+```
+
+## git log
+
+Shows the commit history for the repository. You can use various options to customize the output.
+
+```sh
+git log
+git log --stat
+```
+
+## git diff
+
+Shows the differences between the working directory and the staging area, or between two commits.
+
+```sh
+git diff
+git diff <commit1> <commit2>
+```
+
+## git branch
+
+Lists all branches in the repository. You can also create or delete branches.
+
+```sh
+git branch
+git branch <branch-name>
+git branch -d <branch-name>
+```
+
+## git checkout
+
+Switches to a different branch or commit. You can also use it to create a new branch.
+
+```sh
+git checkout <branch-name>
+git checkout -b <new-branch-name>
+```
+
+## git merge
+
+Merges changes from one branch into another. Typically used to integrate changes from a feature branch into the main branch.
+
+```sh
+git merge <branch-name>
+```
+
+## git pull
+
+Fetches changes from a remote repository and merges them into the current branch.
+
+```sh
+git pull
+```
+
+## git push
+
+Uploads local changes to a remote repository.
+
+```sh
+git push
+```
+
+## git remote
+
+Manages the set of repositories ("remotes") whose branches you track.
+
+```sh
+git remote -v
+git remote add <name> <url>
+git remote remove <name>
+```
+
+## git fetch
+
+Downloads objects and refs from another repository.
+
+```sh
+git fetch
+```
+
+## git rebase
+
+Reapplies commits on top of another base tip. It is often used to keep a feature branch up to date with the main branch.
+
+```sh
+git rebase <branch-name>
+```
+
+## git stash
+
+Temporarily saves changes that are not ready to be committed. You can apply the stashed changes later.
+
+```sh
+git stash
+git stash apply
+```
+
+## git tag
+
+Creates a tag for a specific commit. Tags are often used to mark release points.
+
+```sh
+git tag <tag-name>
+git tag -a <tag-name> -m "Tag message"
+```
+
+## Conclusion
+
+These are some of the most commonly used Git commands that can help you manage your codebase effectively. Understanding and using these commands will make your workflow more efficient and organized.
