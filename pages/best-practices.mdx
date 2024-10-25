@@ -38,11 +38,10 @@ git commit -m "Add user authentication feature"
 
 #### Bad commit message
 git commit -m "Misc changes"
+```
 
 ### Don't commit things that robots can generate
-When we are developing we typically use package manager tools like NPM, Composer, Go Packages, Terraform Plugins, etc.  
-Running a command like `npm install` may install tens of thousands of files.  Commiting them is a headache.  
-Patching them is a nightmare.  Which ones have patches applied?  Which ones need them?  How do I code review it?  
+When we are developing we typically use package manager tools like NPM, Composer, Go Packages, Terraform Plugins, etc.  Running a command like `npm install` may install tens of thousands of files.  Commiting them is a headache.   Patching them is a nightmare.  Which ones have patches applied?  Which ones need them?  How do I code review it?  
 
 Instead commit the manifest file which includes your patches along with any lock file. Any changes to those 2 files are
 typically pretty easy to follow and review.  
