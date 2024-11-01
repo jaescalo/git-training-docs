@@ -1,32 +1,37 @@
 # Hands On With Git
 
-##There are several ways to start working with Git: 
+##There are several ways to start working with Git:
 
 ### Create a new repo locally
-1. Create the directory for the repo you want to make. 
+
+1. Create the directory for the repo you want to make.
 1. `cd` into it.
-1. run `git init`.  
-1. This will make the directory into a brand new empty local repo. This does not do anything with github its purely local.  
-### Clone an existing repository from Github 
+1. run `git init`.
+1. This will make the directory into a brand new empty local repo. This does not do anything with github its purely local.
+
+### Clone an existing repository from Github
+
 1. For example: Go [here](https://github.com/jaescalo/git-training-docs)
-1. The follow the steps in this screen shot: 
-![Cloning a Repository](/repo-clone.png)
-1. Once you have the URL in your clipboard,in your termimal navigate to where you want your repos to live 
+1. The follow the steps in this screen shot:
+   ![Cloning a Repository](/repo-clone.png)
+1. Once you have the URL in your clipboard,in your termimal navigate to where you want your repos to live
 1. run `git clone git@github.com:jaescalo/git-training-docs.git`
 1. this will clone the repo from github to your local!
-1. if you type `ls` you should not see a directory for the cloned repo. 
+1. if you type `ls` you should now see a directory for the cloned repo.
 1. you can `cd` into it
 1. if you type `ls` you should see the same files displayed in github.
 1. if you type `git status` it should tell you that you are on the main branch.
-1. it will set up a default remote called origin.  Origin is simply the default name given. It can be a bit deceptive depending on if you clone first from a main repo or a fork. As matter of principle I try to not clone from a fork for that reason.  
+1. it will set up a default remote called origin. Origin is simply the default name given. It can be a bit deceptive depending on if you clone first from a main repo or a fork. As matter of principle I try to not clone from a fork for that reason.
 1. Now you have a copy that you can work with!
+
 ### Create a new empty repo from github
+
 1. Go to github.com
-1. Follow the steps in the screenshot.  OR simply go to [https://github.com/new](https://github.com/new)
-![Creating a new Repository](/new-repo.png)
-1. The follow the steps in 
-![Creating a new Repository Part 2](/new-repo-2.png)
-1. if the repo was initialized with files you can clone it. 
+1. Follow the steps in the screenshot. OR simply go to [https://github.com/new](https://github.com/new)
+   ![Creating a new Repository](/new-repo.png)
+1. The follow the steps in
+   ![Creating a new Repository Part 2](/new-repo-2.png)
+1. if the repo was initialized with files you can clone it.
 1. If the repo is empty you can add it as a remote and push to it.
 1. `git remote add <repo name> repo_ssh_url`
 1. `git push origin`
@@ -34,59 +39,70 @@
 ## Working with a repo
 
 ### Clone
-1. For the sake of this class: clone `https://github.com/jaescalo/git-training-docs`.  See instructions above :).
+
+1. For the sake of this class: clone `https://github.com/jaescalo/git-training-docs`. See instructions above :).
 1. cd into the repo.
 1. run `git remote update` to get all the changes from your remote repo.  
-   In this case there are none but i recommend running this command whenever you create a new branch, 
+   In this case there are none but i recommend running this command whenever you create a new branch,
    and periodically running it to get the latest changes so you can drop your commits on top of the latest shared code.
 1. Run `git log` to now see the change reflected in your commit history
 1. run `git remote -v` to show all the remote repositories that you might push your changes to.
 
 ### Branch
-1. create a new branch to work from: `git checkout -b my-git-experiments origin/main`.  There is a LOT here. `-b my-git-experiments origin/main` says give me a new branch based off main in my remote origin.   
+
+1. create a new branch to work from: `git checkout -b my-git-experiments origin/main`. There is a LOT here. `-b my-git-experiments origin/main` says give me a new branch based off main in my remote origin.
 
 ### Edit
+
 1. open `pages.index.mdx`
 1. make an edit to the file
-1. run `git status` to see the file change and the location of the file. 
+1. run `git status` to see the file change and the location of the file.
 
 ### Stage and Commit
-1. stage the change for a commit by doing `git add <filename-including-path>`.  Note you can stage multiple files at once for use in a single commit. 
-1. commit the change and record it with a clear commit message.  In this command the -m argument allows you to specify a message.
- `git commit -m "Made a simple change to index.mdx so that we can show how commits work."`
+
+1. stage the change for a commit by doing `git add <filename-including-path>`. Note you can stage multiple files at once for use in a single commit.
+1. commit the change and record it with a clear commit message. In this command the -m argument allows you to specify a message.
+   `git commit -m "Made a simple change to index.mdx so that we can show how commits work."`
 1. Run `git log` to now see the change reflected in your commit history
 
 ### Push
-1. Try to push the changes to origin. It will fail. 
+
+1. Try to push the changes to origin. It will fail.
+
 ```
- git push origin                                                                       
+ git push origin
 ERROR: Permission to jaescalo/git-training-docs.git denied to aweingarten.
 fatal: Could not read from remote repository.
 
 Please make sure you have the correct access rights
 and the repository exists.
-``` 
-1. It's common for people not to grant push access to public repos.  In private repos you may have the ability to push. 
+```
+
+1. It's common for people not to grant push access to public repos. In private repos you may have the ability to push.
 
 ### What the heck is a github fork?
+
 A GitHub fork is a personal copy of someone else's repository that resides in your GitHub account. Forking a repository allows you to freely experiment with changes without affecting the original project. It is a common practice in open-source development, where developers fork a repository to contribute to a project by making changes and then submitting those changes back to the original repository via a pull request.
 
 ### How to Fork a Repository on GitHub
+
 1. Navigate to the Repository: Go to the GitHub page of the repository you want to fork.
 1. Click the Fork Button: Click the "Fork" button at the top-right corner of the page.
 1. Select Your Account: Choose your GitHub account or organization where you want to create the fork.
-Clone the Forked Repository: Once the fork is created, you can clone it to your local machine using the following command:
-`git clone https://github.com/your-username/forked-repo.git`.  However, in this case we already have cloned from `jaescalo/git-training-docs`. 
-If we cloned again we'd simply have 2 disjointed folders/repos.
+   Clone the Forked Repository: Once the fork is created, you can clone it to your local machine using the following command:
+   `git clone https://github.com/your-username/forked-repo.git`. However, in this case we already have cloned from `jaescalo/git-training-docs`.
+   If we cloned again we'd simply have 2 disjointed folders/repos.
 
 ### How to Work with the Fork
-1. Instead we can add this as a new remote in our local repo. e.g `git remote add <fork-name> <your fork address>`.  When I am adding a new fork I like to use my github username as the remote name.   So in my case I would run `git remote add aweingarten git@github.com:aweingarten/git-training-docs.git`
-1. To verify that its working run `git remote update` that will fetch all the updates from the remote repo. 
+
+1. Instead we can add this as a new remote in our local repo. e.g `git remote add <fork-name> <your fork address>`. When I am adding a new fork I like to use my github username as the remote name. So in my case I would run `git remote add aweingarten git@github.com:aweingarten/git-training-docs.git`
+1. To verify that its working run `git remote update` that will fetch all the updates from the remote repo.
 1. Run `git remote -v` you should see a fetch and remote record for both origin and your username!
 1. Now you can do `git push <your remote name>`
 1. If you have set everything up right you should see some output like below:
- ```
- git push aweingarten                                                             
+
+```
+git push aweingarten
 Enumerating objects: 23, done.
 Counting objects: 100% (23/23), done.
 Delta compression using up to 12 threads
@@ -99,32 +115,31 @@ remote: Create a pull request for 'git-curriculum-v1' on GitHub by visiting:
 remote:      https://github.com/aweingarten/git-training-docs/pull/new/git-curriculum-v1
 remote:
 To github.com:aweingarten/git-training-docs.git
- * [new branch]      git-curriculum-v1 -> git-curriculum-v1
- ```
-its telling us that we have pushed our local branch to the remote repository/fork.  They have even been kind enough to give us a URL so we can submit a request to merge the code into the main repo. 
+* [new branch]      git-curriculum-v1 -> git-curriculum-v1
+```
+
+its telling us that we have pushed our local branch to the remote repository/fork. They have even been kind enough to give us a URL so we can submit a request to merge the code into the main repo.
+
 ### Creating your first Pull Request.
-1.  Visit the url in your browser and follow the steps in the screen shot to make your first pull request: 
-![Setting up a pull Request](/pull-request_screen.jpg)
+
+1.  Visit the url in your browser and follow the steps in the screen shot to make your first pull request:
+    ![Setting up a pull Request](/pull-request_screen.jpg)
 
 For any questions about submitting a pull-request see [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
 For more detailed information about forks go[here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks)
 
-
 ## Conclusion
+
 Congrats you have successfully:
+
 1. Configured Git
 1. Cloned a repo
 1. Forked the repo
 1. Added a remote
 1. Created a local branch
-1. Made an edit to a file 
+1. Made an edit to a file
 1. Make a commit to your local branch
 1. Pushed that change to github
-1. Submitted a pull request. 
+1. Submitted a pull request.
 
-In the next class we will talk about code reviews, and dealing with fixing mistakes and even rewriting history.  If you like `Back to the Future` you will love the next class!
-
-
-
-
-
+In the next class we will talk about code reviews, and dealing with fixing mistakes and even rewriting history. If you like `Back to the Future` you will love the next class!
