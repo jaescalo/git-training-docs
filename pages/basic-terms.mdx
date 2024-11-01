@@ -1,5 +1,3 @@
-import { Mermaid, Playground, Code, Pre, Tabs } from 'nextra/components'
-
 # Common Git Terms
 
 ## Repository
@@ -12,6 +10,18 @@ A branch is a parallel version of a repository. It is contained within the repos
     graph TD;
     A[Main Branch] -->|Create Branch| B[Feature Branch];
     B -->|Merge| A;
+```
+
+```mermaid
+stateDiagram-v2
+    direction LR
+    classDef Rose stroke-width:1px,stroke-dasharray:none,stroke:#FF5978,fill:#FFDFE5,color:#8E2236;
+    [*] --> Init
+    Init --> Plan
+    Plan --> Apply
+    Apply --> Destroy
+    Destroy --> [*]
+    class Destroy Rose
 ```
 
 ## Commit
